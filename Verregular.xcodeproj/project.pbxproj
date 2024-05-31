@@ -11,6 +11,11 @@
 		48598B462C07178F006C7A4D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48598B452C07178F006C7A4D /* HomeViewController.swift */; };
 		48598B4B2C071791006C7A4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48598B4A2C071791006C7A4D /* Assets.xcassets */; };
 		48598B4E2C071791006C7A4D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 48598B4D2C071791006C7A4D /* Base */; };
+		48598B722C087218006C7A4D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48598B702C087218006C7A4D /* Localizable.strings */; };
+		48598B752C08729E006C7A4D /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48598B742C08729E006C7A4D /* String+Ex.swift */; };
+		48598B7C2C08B3DC006C7A4D /* SelectVerbsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48598B7B2C08B3DC006C7A4D /* SelectVerbsViewController.swift */; };
+		48598B7E2C08B3FA006C7A4D /* TrainVerbsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48598B7D2C08B3FA006C7A4D /* TrainVerbsViewController.swift */; };
+		48598B852C08C023006C7A4D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 48598B842C08C023006C7A4D /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +25,11 @@
 		48598B4A2C071791006C7A4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48598B4D2C071791006C7A4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48598B4F2C071791006C7A4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48598B712C087218006C7A4D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		48598B732C087227006C7A4D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		48598B742C08729E006C7A4D /* String+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
+		48598B7B2C08B3DC006C7A4D /* SelectVerbsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVerbsViewController.swift; sourceTree = "<group>"; };
+		48598B7D2C08B3FA006C7A4D /* TrainVerbsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainVerbsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48598B852C08C023006C7A4D /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,12 +64,72 @@
 			isa = PBXGroup;
 			children = (
 				48598B412C07178F006C7A4D /* AppDelegate.swift */,
-				48598B452C07178F006C7A4D /* HomeViewController.swift */,
-				48598B4A2C071791006C7A4D /* Assets.xcassets */,
 				48598B4C2C071791006C7A4D /* LaunchScreen.storyboard */,
+				48598B7A2C087409006C7A4D /* Home */,
+				48598B7F2C08B461006C7A4D /* Select */,
+				48598B802C08B468006C7A4D /* Train */,
+				48598B772C0872A9006C7A4D /* Extensions */,
+				48598B4A2C071791006C7A4D /* Assets.xcassets */,
+				48598B702C087218006C7A4D /* Localizable.strings */,
 				48598B4F2C071791006C7A4D /* Info.plist */,
 			);
 			path = Verregular;
+			sourceTree = "<group>";
+		};
+		48598B772C0872A9006C7A4D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				48598B742C08729E006C7A4D /* String+Ex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		48598B782C0873F1006C7A4D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				48598B452C07178F006C7A4D /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		48598B7A2C087409006C7A4D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				48598B782C0873F1006C7A4D /* Controller */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		48598B7F2C08B461006C7A4D /* Select */ = {
+			isa = PBXGroup;
+			children = (
+				48598B812C08B46F006C7A4D /* Controller */,
+			);
+			path = Select;
+			sourceTree = "<group>";
+		};
+		48598B802C08B468006C7A4D /* Train */ = {
+			isa = PBXGroup;
+			children = (
+				48598B822C08B478006C7A4D /* Controller */,
+			);
+			path = Train;
+			sourceTree = "<group>";
+		};
+		48598B812C08B46F006C7A4D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				48598B7B2C08B3DC006C7A4D /* SelectVerbsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		48598B822C08B478006C7A4D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				48598B7D2C08B3FA006C7A4D /* TrainVerbsViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,6 +148,9 @@
 			dependencies = (
 			);
 			name = Verregular;
+			packageProductDependencies = (
+				48598B842C08C023006C7A4D /* SnapKit */,
+			);
 			productName = Verregular;
 			productReference = 48598B3E2C07178F006C7A4D /* Verregular.app */;
 			productType = "com.apple.product-type.application";
@@ -103,8 +177,12 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 48598B352C07178F006C7A4D;
+			packageReferences = (
+				48598B832C08C023006C7A4D /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 48598B3F2C07178F006C7A4D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -120,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48598B4B2C071791006C7A4D /* Assets.xcassets in Resources */,
+				48598B722C087218006C7A4D /* Localizable.strings in Resources */,
 				48598B4E2C071791006C7A4D /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,8 +210,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48598B752C08729E006C7A4D /* String+Ex.swift in Sources */,
 				48598B462C07178F006C7A4D /* HomeViewController.swift in Sources */,
+				48598B7E2C08B3FA006C7A4D /* TrainVerbsViewController.swift in Sources */,
 				48598B422C07178F006C7A4D /* AppDelegate.swift in Sources */,
+				48598B7C2C08B3DC006C7A4D /* SelectVerbsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +229,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		48598B702C087218006C7A4D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48598B712C087218006C7A4D /* en */,
+				48598B732C087227006C7A4D /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -155,6 +246,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -218,6 +310,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -345,6 +438,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		48598B832C08C023006C7A4D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		48598B842C08C023006C7A4D /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48598B832C08C023006C7A4D /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 48598B362C07178F006C7A4D /* Project object */;
 }
