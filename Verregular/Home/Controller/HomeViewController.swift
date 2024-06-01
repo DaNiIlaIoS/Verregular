@@ -62,7 +62,7 @@ class HomeViewController: UIViewController {
         firstButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         firstButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         firstButton.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
-        firstButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 100).isActive = true
+        firstButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 80).isActive = true
         
         titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         titleLabel.bottomAnchor.constraint(equalTo: firstButton.topAnchor, constant: -80).isActive = true
