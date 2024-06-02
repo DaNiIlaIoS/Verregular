@@ -10,14 +10,14 @@ import SnapKit
 
 final class SelectVerbsViewController: UITableViewController {
     // MARK: - Properties
-    private var dataSource = IrregularVerbs()
+    private var dataSource = IrregularVerbs.shared
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Select verbs".localized
-        dataSource.configureVerbs()
+        dataSource.selectedVerbs = dataSource.verbs
         tableView.register(SelectVerbsTableViewCell.self, forCellReuseIdentifier: "SelectVerbsTableViewCell")
     }
     
