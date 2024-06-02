@@ -7,11 +7,18 @@
 
 import Foundation
 
-class IrregularVerbs {
+final class IrregularVerbs {
+    
+    // Singletone
+    static let shared = IrregularVerbs()
+    private init() {
+        configureVerbs()
+    }
+    
     private(set) var verbs: [Verb] = []
     var selectedVerbs: [Verb] = []
     
-    func configureVerbs() {
+    private func configureVerbs() {
         verbs = [Verb(infinitive: "blow", pastSimple: "blew", participle: "blown"),
                  Verb(infinitive: "be", pastSimple: "was/were", participle: "been"),
                  Verb(infinitive: "become", pastSimple: "became", participle: "become"),

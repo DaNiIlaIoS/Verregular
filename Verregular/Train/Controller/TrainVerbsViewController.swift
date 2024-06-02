@@ -64,17 +64,31 @@ final class TrainVerbsViewController: UIViewController {
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .systemGray5
         button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(checkAction), for: .touchUpInside)
         return button
     }()
     
     // MARK: - Properties
     private let edgeInsets = 30
+    private let dataSource = IrregularVerbs.shared.selectedVerbs
+    private var currentVerb: Verb? {
+        guard dataSource.count > count else { return nil }
+        return dataSource[count]
+    }
+    private var count = 0 {
+        didSet {
+            infinitiveLabel.text = currentVerb?.infinitive
+            pastSimpleTextField.text = ""
+            participleTextField.text = ""
+        }
+    }
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Train verbs".localized
+        infinitiveLabel.text = currentVerb?.infinitive
         setupUI()
         hideKeyboardWhenTappedAround()
     }
@@ -90,6 +104,29 @@ final class TrainVerbsViewController: UIViewController {
     }
     
     // MARK: - Methods
+    @objc
+    private func checkAction() {
+        if checkAnswer() {
+            
+            count += 1
+            checkButton.backgroundColor = .green
+            checkButton.setTitle("Correct".localized, for: .normal)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+                self?.checkButton.setTitle("Check".localized, for: .normal)
+                self?.checkButton.backgroundColor = .systemGray5
+            }
+        } else {
+            checkButton.backgroundColor = .red
+            checkButton.setTitle("Try again".localized, for: .normal)
+        }
+    }
+    
+    private func checkAnswer() -> Bool {
+        pastSimpleTextField.text?.lowercased() == currentVerb?.pastSimple.lowercased() &&
+        participleTextField.text?.lowercased() == currentVerb?.participle.lowercased()
+    }
+    
     private func setupUI() {
         view.backgroundColor = .white
         
