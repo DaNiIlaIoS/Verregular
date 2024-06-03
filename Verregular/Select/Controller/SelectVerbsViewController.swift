@@ -17,7 +17,6 @@ final class SelectVerbsViewController: UITableViewController {
         super.viewDidLoad()
         
         title = "Select verbs".localized
-        dataSource.selectedVerbs = dataSource.verbs
         tableView.register(SelectVerbsTableViewCell.self, forCellReuseIdentifier: "SelectVerbsTableViewCell")
     }
     
