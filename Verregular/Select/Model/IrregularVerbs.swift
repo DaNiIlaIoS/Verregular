@@ -13,7 +13,7 @@ final class IrregularVerbs {
     static let shared = IrregularVerbs()
     private init() {
         configureVerbs()
-//        selectedVerbs = verbs
+        selectedVerbs = verbs
     }
     
     private(set) var verbs: [Verb] = []

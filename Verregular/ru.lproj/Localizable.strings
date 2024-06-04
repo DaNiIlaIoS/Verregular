@@ -28,5 +28,6 @@
 "Try again" = "Попробуй еще раз";
 "Correct" = "Верно";
 "Your result" = "Твой результат";
-"Score: \(score)" = "Очков: \(score)";
+"Score: " = "Счет: ";
 "Skip" = "Пропустить";
+"You missing a verb" = "Вы пропустили глагол";

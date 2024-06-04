@@ -72,7 +72,7 @@ final class TrainVerbsViewController: UIViewController {
     
     private lazy var scoreLabel: UILabel = {
         let label = UILabel()
-        label.text = "Score: \(score)"
+        label.text = "\(scoreText)" + "\(score)"
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 12)
         return label
@@ -100,7 +100,7 @@ final class TrainVerbsViewController: UIViewController {
     private let dataSource = IrregularVerbs.shared.selectedVerbs
     private var score = 0 {
         didSet {
-            scoreLabel.text = "Score: \(score)"
+            scoreLabel.text = "\(scoreText)" + "\(score)"
         }
     }
     private var currentVerb: Verb? {
@@ -114,6 +114,7 @@ final class TrainVerbsViewController: UIViewController {
             clearTextField()
         }
     }
+    private var scoreText = "Score: ".localized
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -167,7 +168,7 @@ final class TrainVerbsViewController: UIViewController {
     
     @objc
     private func skipAction() {
-        let skipAlert = UIAlertController(title: "You skip verb",
+        let skipAlert = UIAlertController(title: "You missing a verb".localized,
                                           message: "Past simple: \(currentVerb?.pastSimple ?? "")\n Participle: \(currentVerb?.participle ?? "")",
                                           preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { okAction in
@@ -192,7 +193,7 @@ final class TrainVerbsViewController: UIViewController {
     private func alertController() {
         if currentVerb?.infinitive == dataSource.last?.infinitive {
             let alertController = UIAlertController(title: "Your result".localized,
-                                                    message: "Score: \(score)".localized,
+                                                    message: "\(scoreText)" + "\(score)",
                                                     preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default) { okAction in
                 self.navigationController?.popViewController(animated: true)
