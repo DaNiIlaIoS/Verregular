@@ -85,6 +85,15 @@ final class TrainVerbsViewController: UIViewController {
     }()
     
     // TODO: Skip Button
+    private lazy var skipButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Skip".localized, for: .normal)
+        button.setTitleColor(.systemGray3, for: .normal)
+        button.backgroundColor = .systemGray6
+        button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(skipAction), for: .touchUpInside)
+        return button
+    }()
     
     // MARK: - Properties
     private let edgeInsets = 30
@@ -149,11 +158,25 @@ final class TrainVerbsViewController: UIViewController {
                 self?.checkButton.backgroundColor = .systemGray5
             }
             
-        } else {
+        }  else {
             checkButton.backgroundColor = .red
             checkButton.setTitle("Try again".localized, for: .normal)
             clearTextField()
         }
+    }
+    
+    @objc
+    private func skipAction() {
+        let skipAlert = UIAlertController(title: "You skip verb",
+                                          message: "Past simple: \(currentVerb?.pastSimple ?? "")\n Participle: \(currentVerb?.participle ?? "")",
+                                          preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { okAction in
+            self.alertController()
+            self.count += 1
+        }
+        skipAlert.addAction(okAction)
+        present(skipAlert, animated: true)
+        
     }
     
     private func checkAttempt() -> Bool {
@@ -197,7 +220,8 @@ final class TrainVerbsViewController: UIViewController {
                                  participleLabel,
                                  participleTextField,
                                  checkButton,
-                                 remainderLabel])
+                                 remainderLabel,
+                                skipButton])
         setupConstraints()
     }
     
@@ -242,11 +266,18 @@ final class TrainVerbsViewController: UIViewController {
         
         checkButton.snp.makeConstraints { make in
             make.top.equalTo(participleTextField.snp.bottom).offset(100)
+            make.height.equalTo(44)
             make.leading.trailing.equalToSuperview().inset(edgeInsets)
         }
         
         remainderLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(20)
+            make.leading.trailing.equalToSuperview().inset(edgeInsets)
+        }
+        
+        skipButton.snp.makeConstraints { make in
+            make.top.equalTo(checkButton.snp.bottom).offset(20)
+            make.height.equalTo(34)
             make.leading.trailing.equalToSuperview().inset(edgeInsets)
         }
     }

@@ -28,3 +28,5 @@
 "Try again" = "Попробуй еще раз";
 "Correct" = "Верно";
 "Your result" = "Твой результат";
+"Score: \(score)" = "Очков: \(score)";
+"Skip" = "Пропустить";
