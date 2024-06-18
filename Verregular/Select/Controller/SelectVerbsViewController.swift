@@ -28,10 +28,17 @@ final class SelectVerbsViewController: UITableViewController {
 
 // MARK: - UITableViewDataSource
 extension SelectVerbsViewController {
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        dataSource.sections.count
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.verbs.count
+        return dataSource.sections[section].verbs.count
     }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+            return dataSource.sections[section].title
+        }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -39,7 +46,7 @@ extension SelectVerbsViewController {
                                                        for: indexPath) as? SelectVerbsTableViewCell
         else { return UITableViewCell() }
         
-        let verb = dataSource.verbs[indexPath.row]
+        let verb = dataSource.sections[indexPath.section].verbs[indexPath.row]
         cell.configure(with: verb, isSelected: isSelected(verb: verb))
         
         return cell
@@ -50,7 +57,7 @@ extension SelectVerbsViewController {
 extension SelectVerbsViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let verb = dataSource.verbs[indexPath.row]
+        let verb = dataSource.sections[indexPath.section].verbs[indexPath.row]
         
         if isSelected(verb: verb) {
             dataSource.selectedVerbs.removeAll { $0.infinitive == verb.infinitive }

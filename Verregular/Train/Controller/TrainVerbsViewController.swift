@@ -228,7 +228,6 @@ final class TrainVerbsViewController: UIViewController {
     
     private func setupConstraints() {
         
-        
         scrollView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }

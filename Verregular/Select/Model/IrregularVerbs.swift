@@ -9,16 +9,20 @@ import Foundation
 
 final class IrregularVerbs {
     
-    // Singletone
+    // MARK: - Singletone
     static let shared = IrregularVerbs()
     private init() {
         configureVerbs()
         selectedVerbs = verbs
+        configureSection()
     }
     
+    // MARK: - Properties
     private(set) var verbs: [Verb] = []
+    private(set) var sections: [VerbsTableViewSection] = []
     var selectedVerbs: [Verb] = []
     
+    // MARK: - Methods
     private func configureVerbs() {
         verbs = [Verb(infinitive: "blow", pastSimple: "blew", participle: "blown"),
                  Verb(infinitive: "be", pastSimple: "was/were", participle: "been"),
@@ -41,5 +45,11 @@ final class IrregularVerbs {
                  Verb(infinitive: "feel", pastSimple: "felt", participle: "felt"),
                  Verb(infinitive: "find", pastSimple: "found", participle: "found"),
                  Verb(infinitive: "forget", pastSimple: "forgot", participle: "forgotten")]
+    }
+    
+    private func configureSection() {
+        let groupedDictionary = Dictionary(grouping: verbs, by: { $0.infinitive.prefix(1).uppercased() })
+        sections = groupedDictionary.map { VerbsTableViewSection(title: String($0.key), verbs: $0.value.sorted { $0.infinitive < $1.infinitive }) }
+        sections.sort { $0.title < $1.title }
     }
 }

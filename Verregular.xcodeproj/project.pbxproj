@@ -21,6 +21,7 @@
 		486A326F2C0A3A8800DCA0EB /* Verb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486A326E2C0A3A8800DCA0EB /* Verb.swift */; };
 		486A32712C0A3B2700DCA0EB /* IrregularVerbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486A32702C0A3B2700DCA0EB /* IrregularVerbs.swift */; };
 		486A32852C0EC87900DCA0EB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 486A32842C0EC87900DCA0EB /* SnapKit */; };
+		48EE0F002C216EF3004EB5FE /* VerbsTableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EE0EFF2C216EF3004EB5FE /* VerbsTableViewSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		486A326A2C0A351800DCA0EB /* UIStackView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Ex.swift"; sourceTree = "<group>"; };
 		486A326E2C0A3A8800DCA0EB /* Verb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verb.swift; sourceTree = "<group>"; };
 		486A32702C0A3B2700DCA0EB /* IrregularVerbs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrregularVerbs.swift; sourceTree = "<group>"; };
+		48EE0EFF2C216EF3004EB5FE /* VerbsTableViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbsTableViewSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 			children = (
 				486A326E2C0A3A8800DCA0EB /* Verb.swift */,
 				486A32702C0A3B2700DCA0EB /* IrregularVerbs.swift */,
+				48EE0EFF2C216EF3004EB5FE /* VerbsTableViewSection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				48598B422C07178F006C7A4D /* AppDelegate.swift in Sources */,
 				486A32712C0A3B2700DCA0EB /* IrregularVerbs.swift in Sources */,
 				48598B7C2C08B3DC006C7A4D /* SelectVerbsViewController.swift in Sources */,
+				48EE0F002C216EF3004EB5FE /* VerbsTableViewSection.swift in Sources */,
 				486A326B2C0A351800DCA0EB /* UIStackView+Ex.swift in Sources */,
 				486A32692C0A347100DCA0EB /* UIView+Ex.swift in Sources */,
 			);

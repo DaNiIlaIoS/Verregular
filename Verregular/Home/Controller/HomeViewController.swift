@@ -45,7 +45,7 @@ class HomeViewController: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .red
         configureUI()
     }
     // MARK: - Methods
